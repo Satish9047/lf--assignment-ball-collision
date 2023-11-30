@@ -4,7 +4,7 @@ class Ball{
         this.y= y;
         this.r = r;
 
-        this.xSpeed = getRandomNumber(-5,5);
+        this.xSpeed = getRandomNumber(-5, 5);
         this.ySpeed = getRandomNumber(-5, 5);
 
 
@@ -58,6 +58,7 @@ class Ball{
         const sumOfRadius = this.r + ball.r;
 
         if(distance < sumOfRadius){
+            console.log(collision);
             this.xSpeed *= -1;
             this.ySpeed *= -1;
             ball.xSpeed *= -1;

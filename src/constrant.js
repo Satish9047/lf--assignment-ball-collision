@@ -1,0 +1,8 @@
+const BALL_COUNT = 10;
+const SPEED = 5;
+
+const VIEWPORT_WIDTH = 600;
+const VIEW_HEIGHT = 600;
+
+const BALL_WIDTH = 50;
+const BALL_RADIUS = BALL_WIDTH / 2;
