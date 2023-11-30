@@ -3,8 +3,7 @@ let viewport;
 try{
     viewport = document.getElementById("viewport");
     if(!viewport){
-        throw new Error("view port not found");
-
+        throw new Error("viewport not found");
     }
 }catch{
     console.log(error);
@@ -19,7 +18,7 @@ const ballsArray = [];
 
 for (let i = 0; i < BALL_COUNT; i++){
     const x = getRandomNumber(0, VIEWPORT_WIDTH - BALL_WIDTH);
-    const y =  getRandomeNumber(0, VIEWPORT_HEIGHT - BALL_WIDTH);
+    const y =  getRandomNumber(0, VIEWPORT_HEIGHT - BALL_WIDTH);
     const ball = new Ball(x, y, BALL_RADIUS);
     ballsArray.push(ball);
 
@@ -32,7 +31,7 @@ function render(){
         ball.draw();
         ball.move();
 
-        ball.checkWallCollision(0, 0, VIEWPORT_WIDTH, ViewPORT_HEIGHT);
+        ball.checkWallCollision(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
          ballsArray.forEach((otherBall)=>{
             if(ball === otherBall){
                 return;

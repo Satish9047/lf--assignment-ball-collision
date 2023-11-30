@@ -1,7 +1,7 @@
 class Ball{
     constructor(x, y, r){
-        this.x=x;
-        this.y= y;
+        this.x = x;
+        this.y = y;
         this.r = r;
 
         this.xSpeed = getRandomNumber(-5, 5);
@@ -36,13 +36,13 @@ class Ball{
      };
 
     draw(){
-        this.element.styles.left = `${this.x}px`;
+        this.element.style.left = `${this.x}px`;
         this.element.style.top = `${this.y}px`;
 
     }
 
-    checkWallCollisio = (boundaryLeft, boundaryTop, boundaryWidth, boundaryHeight)=>{
-        if(this.x < boundaryLeft || this.x + Ball_Width > boundaryWidth){
+    checkWallCollision = (boundaryLeft, boundaryTop, boundaryWidth, boundaryHeight)=>{
+        if(this.x < boundaryLeft || this.x + BALL_WIDTH > boundaryWidth){
             this.xSpeed *= -1;
 
         }
@@ -54,11 +54,11 @@ class Ball{
 
 
     checkBallCollision = (ball)=>{
-        const distance = calculateDistance(this.x, this.y, this.ball.y);
+        const distance = calculateDistance(this.x, this.y, ball.x, ball.y);
         const sumOfRadius = this.r + ball.r;
 
         if(distance < sumOfRadius){
-            console.log(collision);
+            // console.log(collision);
             this.xSpeed *= -1;
             this.ySpeed *= -1;
             ball.xSpeed *= -1;
