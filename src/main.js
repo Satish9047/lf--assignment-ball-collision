@@ -1,6 +1,7 @@
 let viewport;
 
 try{
+    //checking view port avilabile or not
     viewport = document.getElementById("viewport");
     if(!viewport){
         throw new Error("viewport not found");
@@ -19,6 +20,7 @@ try{
 
 const ballsArray = [];
 
+//creating  the ball
 for (let i = 0; i < BALL_COUNT; i++){
     const x = getRandomNumber(0, VIEWPORT_WIDTH - BALL_WIDTH);
     const y =  getRandomNumber(0, VIEWPORT_HEIGHT - BALL_WIDTH);
@@ -29,6 +31,7 @@ for (let i = 0; i < BALL_COUNT; i++){
 
 ballsArray.forEach ((ball)=> viewport.appendChild(ball.getElement()));
 
+// creating render function 
 function render(){
     ballsArray.forEach((ball)=>{
         ball.draw();

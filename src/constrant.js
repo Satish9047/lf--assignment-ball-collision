@@ -7,5 +7,5 @@ const BALL_WIDTH = 50;
 const BALL_RADIUS = BALL_WIDTH/2;
 
 //viewport height and width
-const VIEWPORT_WIDTH = 500;
-const VIEWPORT_HEIGHT = 500;
+const VIEWPORT_WIDTH = 600;
+const VIEWPORT_HEIGHT = 600;
