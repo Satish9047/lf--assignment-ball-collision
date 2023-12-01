@@ -1,8 +1,11 @@
+
+//creating the Ball object using class
 class Ball{
     constructor(x, y, r){
         this.x = x;
         this.y = y;
         this.r = r;
+
 
         this.xSpeed = getRandomNumber(-5, 5);
         this.ySpeed = getRandomNumber(-5, 5);
@@ -18,17 +21,17 @@ class Ball{
     }
 
     
-    getX = ()=>this.x;
+    getX = () => this.x;
 
-    getY = ()=>this.y;
+    getY = () => this.y;
 
-    getR = ()=>this.r;
+    getR = () => this.r;
 
-    setX = (x)=>(this.x=x);
+    setX = (x) => (this.x=x);
 
-    setY = (y)=>(this.y=y);
+    setY = (y) => (this.y=y);
 
-    setR = (r)=>(this.r = r);
+    setR = (r) => (this.r = r);
 
     move = ()=>{
         this.x += this.xSpeed;
@@ -41,13 +44,12 @@ class Ball{
 
     }
 
-    checkWallCollision = (boundaryLeft, boundaryTop, boundaryWidth, boundaryHeight)=>{
-        if(this.x < boundaryLeft || this.x + BALL_WIDTH > boundaryWidth){
+    checkWallCollision = (boundaryLeft, boundaryTop, boundaryWidth, boundaryHeight) => {
+        if (this.x - this.r < boundaryLeft || this.x + this.r > boundaryWidth) {
             this.xSpeed *= -1;
-
         }
-
-        if(this.y < boundaryTop || this.y + BALL_WIDTH > boundaryHeight){
+    
+        if (this.y - this.r < boundaryTop || this.y + this.r > boundaryHeight) {
             this.ySpeed *= -1;
         }
     }

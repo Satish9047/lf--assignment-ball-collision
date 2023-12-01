@@ -5,8 +5,11 @@ try{
     if(!viewport){
         throw new Error("viewport not found");
     }
-}catch{
+}catch(error){
+    
     console.log(error);
+    //if the viewport is not found it
+    //the code will create a view port
     viewport = document.createElement("div");
     viewport.id = "viewport";
     viewport.classList.add("viewport");
@@ -38,7 +41,7 @@ function render(){
             }
             ball.checkBallCollision(otherBall);
          });
-    })
+    });
 
     requestAnimationFrame(render);
 }
